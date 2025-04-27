@@ -85,7 +85,7 @@
       <a class="nav-link" href="#visit">Visit - </a>
     </li>  -->
                  <li class="nav-item">
-                     <a class="nav-link" href="https://open.spotify.com/user/31ipn67preuz3aib627p3t5pxvkm?si=918d67c82bd8428e" target="_blank"> Podcast - </a>
+                     <a class="nav-link" href="#podcast" target="_blank"> Events - </a>
                      
                  </li>
                  <li class="nav-item">
@@ -111,6 +111,16 @@
     <header>
       <div class="toggle"></div>
     </header>
+
+    <div class="image-gallery">
+      <img id="gallery-image" class="img-fluid" src="media/event1.jpg" alt="Image 1 description">
+  </div>
+
+
+
+
+
+
     <video src="img/bajiclean.mp4" muted loop autoplay playsinline aria-label="Background video showcasing the activities of Bajirao-Welfare-Trust"></video> 
     <div class="overlay"></div>
     <div class="hero-text">
@@ -126,11 +136,11 @@
 
     </div>
     <ul class="social">
-      <li><a href="https://www.facebook.com/profile.php?id=100095500483099" target="_blank"
+      <li><a href="https://www.facebook.com/bajirao" target="_blank"
           rel="noopener noreferrer"><img src="img/logo.jpg" aria-label="Facebook" alt="Icon of Facebook" ></a></li>
-      <li><a href="https://www.facebook.com/profile.php?id=100095500483099" target="_blank"><img src="img/logo.jpg"
+      <li><a href="https://twitter.com/watotocoding" target="_blank"><img src="img/logo.jpg"
             rel="noopener noreferrer" aria-label="Twitter" alt="Icon of twitter"></a></li>
-      <li><a href="https://www.facebook.com/profile.php?id=100095500483099" target="_blank"><img
+      <li><a href="https://www.instagram.com/watoto_coding_hub/" target="_blank"><img
             src="img/logo.jpg" aria-label="Instagram" alt="icon of instagram" rel="noopener noreferrer"></a></li>
     </ul>
   </section>
@@ -249,7 +259,7 @@
     </div>
 
     <div class="founder-grid">
-      <!--<div class="team-photo"><img loading="lazy" class="img-fluid" alt="photo of Costanza, co-founder of Watoto Coding" loading="lazy" src="img/apu.jpeg"></div>-->
+      <div class="team-photo"><img loading="lazy" class="img-fluid" alt="photo of Costanza, co-founder of Watoto Coding" loading="lazy" src="img/apu.jpeg"></div>
       <div class="team-bio">
         <p>
           Apurba is from Bangladesh and joined Bajira-Welfare-Trust as a volunteer in 2022.
@@ -273,7 +283,7 @@
       </h2>
       <a href="https://qfxppzbv.formester.com/f/0cffb9a8-3a54-46ea-a769-835766fb3bad "
       rel="noopener noreferrer" target="_blank">Donate</a>
-      <a href="https://qfxppzbv.formester.com/f/131ff332-7966-41b5-8bd0-5d8ce9fe9102"
+      <a href="#"
       rel="noopener noreferrer" target="_blank">View the document</a>
       
 
@@ -299,23 +309,23 @@
       <img class="img-fluid icon-img" alt="an icon showing a random map with a pin" src="media/visit-icon.webp">
       <h1>Visit us in person</h1>
 
-      <h2>Come to India and meet the founder and our kids.  
+      <h2>Come to Kibera and meet the founder and our kids.  
       </h2>
- <a href="https://qfxppzbv.formester.com/f/131ff332-7966-41b5-8bd0-5d8ce9fe9102"
-      rel="noopener noreferrer" target="_blank">Book a Visit</a>
+      <formester-popup id="e876c2e6-9502-4079-97fc-ab8965cdc703" width="900px" height="95%" ></formester-popup>
+      <button class="general-btn" onclick="Formester.openPopup('e876c2e6-9502-4079-97fc-ab8965cdc703')">Book a visit</button>
 
       
       
     </div>
     <div class="section-title" id="visit">
-      
+      <img class="img-fluid icon-img" alt="an icon a laptop with people having a video meeting" src="https://qfxppzbv.formester.com/f/131ff332-7966-41b5-8bd0-5d8ce9fe9102">
       <h1>Virtual visit</h1>
 
       <h2>For anyone who wants to experience our teaching approach and meet our founder and kids virtually. 
       </h2>
       <formester-popup id="e876c2e6-9502-4079-97fc-ab8965cdc703" width="900px" height="95%" ></formester-popup>
-       <a href="https://qfxppzbv.formester.com/f/131ff332-7966-41b5-8bd0-5d8ce9fe9102"
-      rel="noopener noreferrer" target="_blank">Book a Virtual Visit</a>
+      <a href="#"
+      rel="noopener noreferrer" target="_blank">Book a virtual visit</a>
       
       
     </div>
@@ -407,6 +417,28 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
+
+
+    <script>
+      const images = [
+          "media/event1.jpg",
+          "media/events.jpg",
+          "media/baji3.jpg"
+      ];
+      let currentIndex = 0;
+      const galleryImage = document.getElementById("gallery-image");
+  
+      setInterval(() => {
+          currentIndex = (currentIndex + 1) % images.length; // Cycle through images
+          galleryImage.src = images[currentIndex]; // Update the image source
+      }, 4000); // Change every 4 seconds
+  </script>
+
+
+
+
+
+
   
 <script>
   
