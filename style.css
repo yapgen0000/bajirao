@@ -860,4 +860,37 @@ padding: var(--most-used-em);
 }
 }
 
+/* Default layout */
+.showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-gallery {
+  order: 1; /* Default order for the gallery */
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  order: 2; /* Default order for the text */
+  text-align: center;
+}
+
+/* Mobile or small screens */
+@media (max-width: 768px) {
+  .showcase {
+    flex-direction: column;
+  }
+
+  .image-gallery img {
+    width: 100%; /* Make images responsive */
+    margin-bottom: 10px;
+  }
+
+  .hero-text {
+    margin-top: 20px;
+  }
+}
+
 
