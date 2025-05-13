@@ -437,6 +437,14 @@ background-color: var(--green-3);
   width: 100%;
   height: auto;
   cursor: pointer;
+  margin-top: 60px; /* Add 60px margin at the top for gallery images */
+}
+
+#gallery-image {
+  max-width: 95%; /* Make the image larger */
+  height: auto; /* Maintain aspect ratio */
+  margin: 150px auto 0; /* Place the image 150px down and center it */
+  display: block; /* Ensure it's treated as a block element */
 }
 
     /* Modal that opens when image 
@@ -504,7 +512,6 @@ background-color: var(--green-3);
   {
     font-size: calc(var(--frequent-font-size) + 1,5em);
   }
-  .text h3
   {
     font-size: calc(var(--frequent-font-size) + 0.5em);
   }
