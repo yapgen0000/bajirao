@@ -1,37 +1,61 @@
+(() => {
+  // Gallery modal handling
+  const galleryImages = document.querySelectorAll('.gallery-item img');
+  const modal = document.getElementById('modal');
+  if (!modal) return;
 
-// modal opens when we click on image
+  const modalImg = modal.querySelector('img');
+  const modalClose = modal.querySelector('.modal__close');
 
-const galleryImages = document.querySelectorAll('.gallery__image');
-const modal = document.getElementById('modal');
-const modalImage = document.querySelector('.modal__image');
-const modalClose = document.querySelector('.modal__close');
+  if (!galleryImages.length || !modalImg) return;
 
-galleryImages.forEach((image) => {
-  image.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    modalImage.src = image.src;
+  galleryImages.forEach(img => {
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
   });
-});
 
-modalClose.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
+  if (modalClose) {
+    modalClose.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
   }
-}
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+})();
+
+(() => {
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('nav-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+
+// Hero image rotator (uses images from img/)
+(function(){
+  const images = ["img/baji1.jpg","img/baj2.jpg","img/galleryimage1.jpg","img/galleryimage2.jpg"].filter(Boolean);
+  if(!images.length) return;
+  const img = document.getElementById('hero-image');
+  if(!img) return;
+  let i = 0;
+  setInterval(()=>{
+    i = (i + 1) % images.length;
+    img.style.transition = 'opacity 0.5s ease';
+    img.style.opacity = 0;
+    setTimeout(()=>{ img.src = images[i]; img.style.opacity = 1 }, 500);
+  }, 5000);
+})();
 
 
 
